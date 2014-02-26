@@ -5562,7 +5562,7 @@ button.close {
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #fff;
+  color: red;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
