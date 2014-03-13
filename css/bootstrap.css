@@ -4026,11 +4026,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: rgb(66,67,69);
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: orange;
+  color: rgb(246, 117, 62) ;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -5532,7 +5532,7 @@ button.close {
 }
 .carousel-indicators {
   position: absolute;
-color: red; 
+color: black; 
   bottom: 10px;
   left: 50%;
   z-index: 15;
