@@ -112,9 +112,18 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 		getSettings: function () {
 			if (VK) {
 				VK.api('storage.get', {"key": "settings"}, function (data) {
-					console.log('storage.get');
-					console.log(data.response);
-					return JSON.parse(data.response);
+					if (data.response === "") {
+						return {
+							sound: true,
+							color: true,
+							letter: false,
+							number: false
+						}
+					} else {
+						console.log('storage.get');
+						console.log(data.response);
+						return JSON.parse(data.response);
+					}
 				});
 			} else {
 				if ($cookies.settings === undefined) {
