@@ -110,19 +110,33 @@ tryHskServices.factory('checkboxValues', ['$cookies', function ($cookies) {
 tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 	return {
 		getSettings: function () {
-			if ($cookies.settings === undefined) {
-				return {
-					sound: true,
-					color: true,
-					letter: false,
-					number: false
-				}
+			if (VK) {
+				VK.api('storage.get', {"key": "settings"}, function (data) {
+					console.log('storage.get');
+					console.log(data.response);
+					return JSON.parse(data.response);
+				});
 			} else {
-				return JSON.parse($cookies.settings);
+				if ($cookies.settings === undefined) {
+					return {
+						sound: true,
+						color: true,
+						letter: false,
+						number: false
+					}
+				} else {
+					return JSON.parse($cookies.settings);
+				}
 			}
 		},
 		refreshSettings: function (object) {
-			$cookies.settings = JSON.stringify(object);
+			if (VK) {
+				VK.api('storage.set', {"key": "settings", "value": JSON.stringify(object)}, function (data) {
+					console.log('storage.set');
+				});
+			} else {
+				$cookies.settings = JSON.stringify(object);
+			}
 		}
 	};
 }]);
