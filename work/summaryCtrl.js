@@ -117,8 +117,8 @@ tryHskControllers.controller('summaryCtrl', function ($scope, $rootScope, sortWo
             string =  arrayOfLetter.join('');
 
         }
-		if(!$rootScope.settings.color) {
-			if($rootScope.settings.number) {
+		if(!true) {
+			if(true) {
 				return [{
 					color: 'black',
 					pinyin: string
@@ -143,7 +143,7 @@ tryHskControllers.controller('summaryCtrl', function ($scope, $rootScope, sortWo
 		if(arrayOfNumber.length == 0) arrayOfNumber = ['ERROR'];
 		for (var k = 0; k < arrayOfSyllable.length; k++) {
 			tone = {};
-			if($rootScope.settings.number) {
+			if(true) {
 				mockForNumber = arrayOfNumber[k];
 			}
 			switch (arrayOfNumber[k]) {
