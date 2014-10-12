@@ -113,6 +113,7 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 			if (VK) {
 				console.log('storage.get');
 				VK.api('storage.get', {"key": "settings"}, function (data) {
+					console.log('storage.get internal');
 					if (data.response === "") {
 						console.log('empty');
 						return {
@@ -143,6 +144,7 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 		refreshSettings: function (object) {
 			if (VK) {
 				console.log('storage.set');
+				console.log(object);
 				console.log(JSON.stringify(object));
 				VK.api('storage.set', {"key": "settings", "value": JSON.stringify(object)}, function (data) {
 				});
