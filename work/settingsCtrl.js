@@ -14,6 +14,7 @@ tryHskControllers.controller('settingsCtrl', function ($scope, $rootScope, langu
     };
 
 	$scope.settings = $rootScope.settings = settings.getSettings();
+	console.log($scope.settings)
 	$scope.$watch('settings', function () {
 		settings.refreshSettings($scope.settings);
 		$rootScope.settings = $scope.settings;
