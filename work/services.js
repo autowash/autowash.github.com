@@ -129,6 +129,7 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 					}
 				});
 			} else {
+				console.log('no scenary');
 				if ($cookies.settings === undefined) {
 					return {
 						sound: true,
@@ -142,17 +143,21 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 			}
 		},
 		refreshSettings: function (object) {
-			console.log('object = ' + !object);
+			console.log('object = ' + object);
+			console.log(!object);
 			if (!object) return;
 			if (VK) {
 				console.log('storage.set');
 				console.log(object);
-				object = JSON.stringify(object);
-				object = {"key": "settings", "value": object};
-				console.log(object)
-				VK.api('storage.set', {"key": "settings", "value": JSON.stringify(object)}, function (data) {
+				//object = JSON.stringify(object);
+				object = {"key": "settings", "value": JSON.stringify(object)};
+				console.log(object);
+				VK.api('storage.set', object, function (data) {
+					console.log('resp');
+					console.log(data)
 				});
 			} else {
+				console.log('no scenary cooki');
 				$cookies.settings = JSON.stringify(object);
 			}
 		}
