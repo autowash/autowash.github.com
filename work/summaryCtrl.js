@@ -37,7 +37,8 @@ tryHskControllers.controller('summaryCtrl', function ($scope, $rootScope, sortWo
 			tone = {},
 			tones = [],
 			mockForNumber = ''; //нужно для
-        if($rootScope.settings.letter) {
+        //if($rootScope.settings.letter) {
+        if(true) {
             var arrayOfLetter,
                 lengthOfArrayOfLetter;
             arrayOfLetter = string.split('');
