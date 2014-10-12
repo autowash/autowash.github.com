@@ -1,5 +1,5 @@
 tryHskControllers.controller('checkboxCtrl', function ($scope, $rootScope, checkboxValues) {
-
+	console.log(VK);
 	$rootScope.checkboxValues = checkboxValues.getCheckboxValues();
 	$scope.checkboxValues = $rootScope.checkboxValues;
 	$scope.$watch('checkboxValues', function () {
