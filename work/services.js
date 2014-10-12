@@ -145,7 +145,9 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 			if (VK) {
 				console.log('storage.set');
 				console.log(object);
-				console.log(JSON.stringify(object));
+				object = JSON.stringify(object);
+				object = {"key": "settings", "value": object};
+				console.log(object)
 				VK.api('storage.set', {"key": "settings", "value": JSON.stringify(object)}, function (data) {
 				});
 			} else {
