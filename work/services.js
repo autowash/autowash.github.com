@@ -142,6 +142,8 @@ tryHskServices.factory('settings', ['$cookies', function ($cookies) {
 			}
 		},
 		refreshSettings: function (object) {
+			console.log('object = ' + !object);
+			if (!object) return;
 			if (VK) {
 				console.log('storage.set');
 				console.log(object);
