@@ -3,37 +3,40 @@
 
         <ion-content>
 
+            <div class="row" id="mocking_bird">
+
+            </div>
+
             <div class="row">
-                <div class="col col-50 col-offset-25" style="height: 200px">
-                    <!--<img src="logo.svg">-->
-<p align="right" style="vertical-align: middle; height: 7em;
-  line-height: 7em;">fhsdjshfdjshj</p>
+                <div class="{{width_}}">
+
+                    <img src="46.png" width="{{imgWidth}}" id="logo">
                 </div>
             </div>
             <div class="row" style="margin: 0">
-                <div class="col col-50 col-offset-25 withoutMarginTopAndBottom"  >
-                    <button class="button icon-left ion-iphone button-block button-positive" id="m" style="margin: 0!important;">
+                <div class="{{width_}}">
+                    <button class="button icon-left ion-iphone button-block button-positive" style="margin: 0!important;">
                         <h2 style="color: #ffffff"> Позвонить нам </h2>
                     </button>
                 </div>
             </div>
             <div class="row" style="margin: 0">
-                <div class="col col-50 col-offset-25 withoutMarginTopAndBottom" >
+                <div class="{{width_}}" >
                     <button class="button icon-left ion-ios7-location button-block button-positive" style="margin: 0!important;" ng-click="go('/map')">
                        <h2 style="color: #ffffff">  Мы на карте  </h2>
                     </button>
                 </div>
             </div>
             <div class="row" style="margin: 0">
-                <div class="col col-50 col-offset-25 withoutMarginTopAndBottom"  >
+                <div class="{{width_}}"  >
                     <button class="button icon-left ion-clipboard button-block button-positive" style="margin: 0!important;" ng-click="go('/call')">
                        <h2 style="color: #ffffff"> Запись на приём  </h2>
                     </button>
                 </div>
             </div>
             <div class="row" style="margin: 0">
-                <div class="col col-50 col-offset-25 withoutMarginTopAndBottom">
-                    <button class="button icon-left ion-navicon-round button-block button-positive" style="margin: 0!important;" ng-click="go('/news')">
+                <div class="{{width_}}">
+                    <button  id="current_width" class="button icon-left ion-navicon-round button-block button-positive" style="margin: 0!important;" ng-click="go('/menu')">
                         <h1 style="color: #ffffff">Меню</h1>
                     </button>
                 </div>

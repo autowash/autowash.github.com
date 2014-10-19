@@ -1,4 +1,7 @@
-angular.module('starter', ['ionic'])
+angular.module('starter', [
+	'ionic',
+	'ngResource'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -43,16 +46,21 @@ angular.module('starter', ['ionic'])
 				templateUrl: "partials/map.html",
 				controller: 'map'
 			})
+			.state('menu', {
+				url: "/menu",
+				templateUrl: "partials/menu.html",
+				controller: 'menu'
+			})
 ;
 
 		$urlRouterProvider.otherwise('/main');
 
 	})
-	.controller('main', function ($scope, $location) {
+	.controller('main', function ($scope, $location, $interval, $timeout) {
 		$scope.go = function (url) {
 			$location.url(url);
 			if (url === '/map') {
-				setTimeout(function () {
+				$timeout(function () {
 						var myMap,
 							myPlacemark;
 						myMap = new ymaps.Map("map", {
@@ -67,9 +75,39 @@ angular.module('starter', ['ionic'])
 
 						myMap.geoObjects.add(myPlacemark);
 					},
-					300)
+					1000)
 			}
-		}
+		};
+		var button = jQuery('#current_width'),
+			mocking_bird = jQuery('#mocking_bird'),
+			currentWidth = button.width(),
+			screen_availHeight = screen.availHeight;
+		$scope.imgWidth = currentWidth;
+		$interval(function() {
+				if(screen.width < 400) {
+					$scope.width_ = "col col-100 withoutMarginTopAndBottom";
+				} else {
+					if(screen.width < 600) {
+						$scope.width_ = "col col-80 col-offset-10 withoutMarginTopAndBottom";
+					} else {
+						if(screen.width < 900) {
+							$scope.width_ = "col col-50 col-offset-25 withoutMarginTopAndBottom";
+						} else {
+							$scope.width_ = "col col-33 col-offset-33 withoutMarginTopAndBottom";
+						}
+					}
+				}
+
+				if(currentWidth !== button.width()) {
+					currentWidth = button.width();
+					$scope.imgWidth = currentWidth + 26;
+				}
+				if(screen_availHeight !== screen.availHeight) {
+					screen_availHeight = screen.availHeight;
+					mocking_bird.height((screen.availHeight - button.offset().top - 26)/2);
+				}
+		},
+		50)
 	})
 	.controller('news', function($scope, $location, $resource) {
 		$scope.refresh = function() {
@@ -99,6 +137,11 @@ angular.module('starter', ['ionic'])
 		}
 	})
 	.controller('map', function($scope, $location) {
+		$scope.go = function(url) {
+			$location.url(url);
+		}
+	})
+	.controller('menu', function($scope, $location) {
 		$scope.go = function(url) {
 			$location.url(url);
 		}

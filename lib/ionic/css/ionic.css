@@ -2782,8 +2782,8 @@ a.subdued {
     .bar.bar-light.bar-footer {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
-    border-color: #b2b2b2;
-    background-color: #f8f8f8;
+    border-color: #3695DF;
+    background-color: #3695DF;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
     .bar.bar-stable .title {
@@ -2862,7 +2862,7 @@ a.subdued {
     overflow: hidden;
     margin: 0 10px;
     min-width: 30px;
-    height: 43px;
+    height: 100px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -5814,8 +5814,8 @@ progress {
         box-shadow: none;
         color: #fff; }
   .button.button-positive {
-    border-color: #145fd7;
-    background-color: #4a87ee;
+    border-color: #3695DF;
+    background-color: #3695DF;
     color: #fff; }
     .button.button-positive:hover {
       color: #fff;

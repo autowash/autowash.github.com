@@ -1,20 +1,21 @@
 <ion-view title="call">
     <ion-pane>
         <ion-header-bar class="bar-stable icon-left ion-forward" ng-click="go('/main')">
-            <h1 class="title">Ionic Blank Starter</h1>
+        <!--<ion-header-bar class="bar-stable icon-left ion-forward">-->
+            <h1 class="title">Запись на приём</h1>
         </ion-header-bar>
         <ion-content class="has-header">
+            <br>
             <div class="row">
-                <div class="col-offset-10"></div>
-                <h3>Введите Ваши данные и мы обязательно Вам перезвоним для уточнения даты времени приёма</h3>
+                <h3 class="blue text-left">Введите Ваши данные и мы обязательно Вам перезвоним для уточнения даты времени приёма</h3>
             </div>
             <div class="list list-inset">
-                <h1>Ваше имя:</h1>
+                <h1 class="blue">Ваше имя:</h1>
                 <label class="item item-input">
                     <!--<input type="text" placeholder="First Name">-->
                     <input type="text" ng-model="name">
                 </label>
-                <h1>Ваше телефон:</h1>
+                <h1 class="blue">Ваше телефон:</h1>
                 <label class="item item-input">
                     <!--<input type="text" placeholder="Last Name">-->
                     <input type="text" ng-model="phone">

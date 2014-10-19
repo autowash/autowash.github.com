@@ -3,5 +3,16 @@
     margin-top: 0;
 }
 .item-input {
-    border-color: #145fd7;
+    border-color: #3695DF;
+}
+.blue {
+    color: #3695DF;
+}
+.ion-forward:before {
+    color: #FFFFFF!important;
+    font-size: 36px!important;
+}
+.bar-stable h1 {
+    color: #FFFFFF!important;
+    font-size: 36px!important;
 }

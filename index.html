@@ -13,35 +13,16 @@
     -->
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="js/jquery-2.1.1.js"></script>
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="lib/angular-resource.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+      <!-- cordova script (this will be a 404 during development) -->
+      <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+      <!-- your app's js -->
+      <script src="js/app.js"></script>
       <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-      <script type="text/javascript">
-          ymaps.ready(init);
-          var myMap,
-                  myPlacemark;
-          console.log('jjjjj');
-
-          function init(){
-              console.log('jjjjj');
-              myMap = new ymaps.Map("map", {
-                  center: [55.76, 37.64],
-                  zoom: 7
-              });
-
-              myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-                  hintContent: 'Москва!',
-                  balloonContent: 'Столица России'
-              });
-
-              myMap.geoObjects.add(myPlacemark);
-          }
-      </script>
   </head>
 
 
