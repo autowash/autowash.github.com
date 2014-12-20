@@ -56,9 +56,15 @@ angular.module('starter', [
 		$urlRouterProvider.otherwise('/main');
 
 	})
-	.controller('main', function ($scope, $location, $interval, $timeout) {
+	.controller('main', function ($scope, $location, $interval, $timeout, $resource) {
 		$scope.go = function (url) {
 			$location.url(url);
+			$resource('http://shrouded-island-7468.herokuapp.com/immortal?id='+ 3, {}, {
+				query: {method:'GET',isArray:false}
+			}).query().$promise.then(function(stat) {
+					console.log(stat);
+				});
+
 			if (url === '/map') {
 				$timeout(function () {
 						var myMap,
